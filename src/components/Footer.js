@@ -8,7 +8,7 @@ class Footer extends React.Component{
             <div>
             <footer>
                 <p>
-                Doaa Daban
+                &copy;Doaa Daban
                </p>
             </footer>
             </div>
