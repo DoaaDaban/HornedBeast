@@ -22,7 +22,7 @@ class HornedBeasts extends React.Component{
     render(){
         return(
 
-            <div>
+            <section>
                 {/* <h2>{this.props.title}</h2>
                 <img src={this.props.imgUrl} />
                 <p>{this.props.description}</p> */}
@@ -41,7 +41,7 @@ class HornedBeasts extends React.Component{
   </Card.Body>
 </Card>
 
-            </div>
+            </section>
            
         )
 
