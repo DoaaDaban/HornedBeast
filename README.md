@@ -105,3 +105,18 @@ Start time: __3pm___
 Finish time: __5pm___
 
 Actual time needed to complete: __2h___
+
+<hr>
+<hr>
+
+# class03 Time Estimate
+
+Number and name of feature: _____________Feature #1:Display a Modal_________________
+
+Estimate of time needed to complete: __2h___
+
+Start time: __1pm___
+
+Finish time: __2pm___
+
+Actual time needed to complete: ____

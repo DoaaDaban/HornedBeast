@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+
 
 
 class HornedBeasts extends React.Component{
@@ -27,6 +29,7 @@ class HornedBeasts extends React.Component{
                 <img src={this.props.imgUrl} />
                 <p>{this.props.description}</p> */}
 
+<Col>
 <Card style={{ width: '18rem' }}>
   <Card.Img onClick={this.incrementNumOfLikes} variant="top" src={this.props.imgUrl} />
   <Card.Body>
@@ -40,7 +43,7 @@ class HornedBeasts extends React.Component{
     <Button variant="primary">Go somewhere</Button>
   </Card.Body>
 </Card>
-
+</Col>
             </section>
            
         )
