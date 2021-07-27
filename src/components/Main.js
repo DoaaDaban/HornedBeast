@@ -1,28 +1,11 @@
 
-
 import React from 'react';
 import HornedBeasts from './HorndBeast';
 import data from '../data.json';
 import Row from 'react-bootstrap/Row';
-import SelectedBeast from './SelectedBeast';
-
 
 
 class Main extends React.Component{
-
-
-    constructor(props){
-        super(props);
-        this.state ={
-            setlectedImage: ''
-          } 
-        }
-
-        SelectedBeastFun =() =>{
-            this.setState({
-                // setlectedImage : this.state.setlectedImage
-            })
-        }
 
 render(){
     return(
@@ -32,14 +15,10 @@ render(){
     // we dont have to save it varaible, cuz return ma lazm a3rf jwaha variable, 
     data.map((elements) =>{
        return <div>
-           <HornedBeasts onClick={this.SelectedBeastFun} title= {elements.title}
+           <HornedBeasts  title= {elements.title}
          imgUrl={elements.imgUrl} 
          description={elements.description}
          />
-
-         <SelectedBeast 
-          selctedImage={elements.SelectedBeastFun}
-          />
 
     </div>
         })

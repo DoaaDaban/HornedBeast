@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
+import SelectedBeast from './SelectedBeast';
 
 
 class HornedBeasts extends React.Component{
@@ -20,14 +20,22 @@ class HornedBeasts extends React.Component{
         })
     }
 
+    clickFunc = () => {
+        this.setState({
+            click: this.state.click + 1
+        })
+    }
+    cancelFunc = () =>{
+        this.setState({
+            click: this.state.click - 1
+        })
+    }
+
     render(){
         return(
 
             <section>
-                {/* <h2>{this.props.title}</h2>
-                <img src={this.props.imgUrl} />
-                <p>{this.props.description}</p> */}
-
+               
 <Col>
 <Card style={{ width: '18rem' }}>
   <Card.Img onClick={this.incrementNumOfLikes} variant="top" src={this.props.imgUrl} />
@@ -39,7 +47,13 @@ class HornedBeasts extends React.Component{
     <Card.Text>
     {this.props.description}
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+   
+    <SelectedBeast title={this.props.title} 
+    imgUrl={this.props.imgUrl} 
+    description={this.props.description} 
+    selectFunc={this.clickFunc}
+    cancleFunc={this.cancleFunc}
+    />
   </Card.Body>
 </Card>
 </Col>
