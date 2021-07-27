@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import  Button  from 'react-bootstrap/Button';
+import  Image  from 'react-bootstrap/Image';
 
 
 class SelectedBeast extends React.Component{
@@ -15,12 +16,14 @@ constructor(props){
 handleSelectFun =() =>{
  this.setState({
    show : true,
-   title : this.state.title ,
-  //  description : this.state.description ,
-  //  imgUrl : this.state.imgUrl ,
+   title : this.props.title ,
+   description : this.props.description ,
+   imgUrl : this.props.imgUrl ,
    
  })
 }
+
+
 
     render(){
       //console.log(this.props.selctedImage)
@@ -36,12 +39,14 @@ handleSelectFun =() =>{
    </Modal.Header>
 
    <Modal.Body >
-     {this.state.imgUrl}
+     <Image variant="top" src={this.state.imgUrl} alt={"test"} width={300} />
+
+     {this.state.description}
    </Modal.Body>
 
    <Modal.Footer>
-     <Button variant="secondary" >Close</Button>
-     <Button variant="primary">OK</Button>
+     <Button onClick={() => { this.setState({show : false })}} variant="secondary" >Close</Button>
+    
    </Modal.Footer>
   </Modal.Dialog>
 
