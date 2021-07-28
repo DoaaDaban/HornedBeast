@@ -9,6 +9,8 @@ import "./App.css";
 import data from "./data.json";
 import SelectedBeast from "./components/SelectedBeast";
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,8 +19,22 @@ class App extends React.Component {
       title: null,
       url: null,
       description: null,
+      data1 : data
+     
     };
   }
+
+  dataHandle = (submittedData) => {
+    //eslint-disable-next-line
+    let newDataArray = data.filter((item) => {
+      if (item.horns === Number(submittedData)) {
+        return item;
+      } else if (submittedData === "all") {
+        return item;
+      }
+    });
+    this.setState({ data1: newDataArray });
+  };
 
   modalData = (title, url, desc) => {
     this.setState({
