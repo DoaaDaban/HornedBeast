@@ -23,8 +23,6 @@ handleSelectFun =() =>{
  })
 }
 
-
-
     render(){
       //console.log(this.props.selctedImage)
     return(
