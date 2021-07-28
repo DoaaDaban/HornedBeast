@@ -1,34 +1,35 @@
 
-import React from 'react';
-import HornedBeasts from './HorndBeast';
-import data from '../data.json';
-import Row from 'react-bootstrap/Row';
+import React from "react";
+import HornedBeasts from "./HornedBeasts";
+import { Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
+class Main extends React.Component {
+//   getData(){
+//     let dataArr = this.props.data;
+//     return dataArr;
+//   }
 
-class Main extends React.Component{
-
-render(){
-    return(
-        <main>
-              <Row xs={1} md={4} className="g-4">
-{
-    // we dont have to save it varaible, cuz return ma lazm a3rf jwaha variable, 
-    data.map((elements) =>{
-       return <div>
-           <HornedBeasts  title= {elements.title}
-         imgUrl={elements.imgUrl} 
-         description={elements.description}
-         />
-
-    </div>
-        })
-        
+  render(){
+    return (
+      <>
+        {this.props.data.map((element) => {
+          return (
+            <Col lg={3}>
+              <HornedBeasts
+                className="card"
+                title={element.title}
+                image_url={element.image_url}
+                description={element.description}
+                showModal={this.props.stateUpdate}
+                modalData={this.props.modalData}
+              />
+            </Col>
+          );
+        })}
+      </>
+    );
+  }
 }
-        </Row>
-            
-        </main>
 
-    )
- }
-}
 export default Main;
